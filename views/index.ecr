@@ -9,7 +9,11 @@
         var ws = new WebSocket("ws://" + location.host + "/chat");
         // Append each message
         ws.onmessage = function(e) { $('#chat').append(e.data + "\n") };
-
+        window.onbeforeunload = function() {
+         ws.onclose = function () {}; // disable onclose handler first
+         ws.send('bye')
+         ws.close()
+         };
         $("form").bind('submit', function(e) {
           var message = $('#msg').val();
           ws.send(message);
