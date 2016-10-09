@@ -1,7 +1,12 @@
 name: kemal-chat
 version: 0.1.0
 
+dependencies:
+  kemal:
+    github: sdogruyol/kemal
+    branch: master
+
 authors:
-  - kp <kpisgod@gmail.com>
+  - kp
 
 license: MIT
